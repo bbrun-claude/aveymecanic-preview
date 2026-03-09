@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AVEYMECANIC | M&eacute;canique de pr&eacute;cision en Aveyron</title>
+<meta name="description" content="AVEYMECANIC, sp&eacute;cialiste de l'usinage de pi&egrave;ces m&eacute;caniques de pr&eacute;cision &agrave; Anglars-Saint-F&eacute;lix (12). CNC 3 &agrave; 5 axes, CFAO, petites s&eacute;ries et pi&egrave;ces unitaires depuis 1995.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --blue:#2D5F8A;
+  --blue-dark:#1E4265;
+  --green:#8BC53F;
+  --green-dark:#6FA830;
+  --dark:#0F1A26;
+  --grey:#3A3F45;
+  --light:#F4F7FA;
+  --cream:#FAFBFD;
+}
+body{font-family:'Source Sans 3',sans-serif;color:var(--grey);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;color:var(--dark)}
+img{max-width:100%;height:auto}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(15,26,38,0.95);backdrop-filter:blur(8px);padding:0.8rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:all 0.3s}
+.nav-logo{display:flex;align-items:center;gap:0.6rem}
+.nav-logo img{height:44px}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{color:rgba(255,255,255,0.85);font-family:'Sora',sans-serif;font-size:0.9rem;font-weight:400;transition:color 0.3s}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{background:var(--blue);color:#fff !important;padding:0.5rem 1.2rem;border-radius:4px;font-weight:600;transition:background 0.3s}
+.nav-cta:hover{background:var(--blue-dark)}
+.menu-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.menu-toggle span{width:24px;height:2px;background:#fff;transition:all 0.3s}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:var(--dark);overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:url('https://aveymecanic.fr/FOND0.jpg') center/cover;opacity:0.3}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,26,38,0.85) 40%,rgba(45,95,138,0.5))}
+.hero-content{position:relative;z-index:2;max-width:700px;padding:2rem 4rem}
+.hero-badge{display:inline-block;background:rgba(139,197,63,0.15);color:var(--green);padding:0.4rem 1rem;border-radius:20px;font-size:0.85rem;font-weight:600;margin-bottom:1.5rem;border:1px solid rgba(139,197,63,0.3)}
+.hero h1{color:#fff;font-size:3rem;font-weight:700;line-height:1.15;margin-bottom:1rem}
+.hero h1 span{color:var(--green)}
+.hero p{color:rgba(255,255,255,0.75);font-size:1.15rem;margin-bottom:2rem;max-width:550px}
+.btn{display:inline-block;padding:0.85rem 2rem;border-radius:4px;font-family:'Sora',sans-serif;font-weight:600;font-size:0.95rem;transition:all 0.3s;cursor:pointer}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-blue:hover{background:var(--blue-dark);transform:translateY(-2px)}
+.btn-outline{border:2px solid rgba(255,255,255,0.4);color:#fff;margin-left:1rem}
+.btn-outline:hover{background:rgba(255,255,255,0.08)}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+.container{max-width:1100px;margin:0 auto}
+.section-title{text-align:center;margin-bottom:3rem}
+.section-title h2{font-size:2.2rem;margin-bottom:0.5rem}
+.section-title .accent{color:var(--blue)}
+.section-title p{color:#777;font-size:1.05rem;max-width:550px;margin:0 auto}
+
+/* ABOUT */
+.about{background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.about-img{border-radius:8px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.1)}
+.about-img img{width:100%;height:380px;object-fit:cover;display:block}
+.about-text h3{font-size:1.5rem;margin-bottom:1rem}
+.about-text p{margin-bottom:1rem;color:#555}
+.about-badges{display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap}
+.badge{display:flex;align-items:center;gap:0.5rem;background:#fff;border:1px solid #e0e4e8;border-radius:6px;padding:0.6rem 1rem}
+.badge svg{width:20px;height:20px;fill:var(--blue)}
+.badge span{font-size:0.85rem;font-weight:600;color:var(--dark)}
+
+/* SERVICES */
+.services{background:#fff}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.service-card{background:var(--light);border-radius:8px;padding:2rem;border-left:4px solid var(--blue);transition:transform 0.3s,box-shadow 0.3s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,0,0,0.08)}
+.service-card h3{font-size:1.05rem;margin-bottom:0.6rem;color:var(--blue)}
+.service-card p{font-size:0.9rem;color:#666;line-height:1.5}
+
+/* GALLERY */
+.gallery{background:var(--dark);color:#fff}
+.gallery .section-title h2{color:#fff}
+.gallery .section-title p{color:rgba(255,255,255,0.6)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.gallery-item{border-radius:6px;overflow:hidden;position:relative;aspect-ratio:4/3}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-caption{position:absolute;bottom:0;left:0;right:0;padding:0.8rem;background:linear-gradient(transparent,rgba(0,0,0,0.7));color:#fff;font-size:0.85rem;font-weight:600}
+
+/* MACHINE IMPEC */
+.impec{background:var(--light)}
+.impec-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.impec-img{border-radius:8px;overflow:hidden;box-shadow:0 8px 25px rgba(0,0,0,0.1)}
+.impec-img img{width:100%;height:350px;object-fit:cover;display:block}
+.impec-text h3{font-size:1.5rem;margin-bottom:1rem;color:var(--blue)}
+.impec-text p{margin-bottom:1rem;color:#555}
+
+/* CTA */
+.cta{background:linear-gradient(135deg,var(--blue),var(--blue-dark));text-align:center;color:#fff;padding:4rem 2rem}
+.cta h2{color:#fff;font-size:2rem;margin-bottom:0.8rem}
+.cta p{font-size:1.1rem;opacity:0.9;margin-bottom:2rem;max-width:550px;margin-left:auto;margin-right:auto}
+.btn-white{background:#fff;color:var(--blue-dark)}
+.btn-white:hover{background:var(--cream);transform:translateY(-2px)}
+
+/* CONTACT */
+.contact{background:var(--cream)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.contact-info h3{font-size:1.4rem;margin-bottom:1.5rem}
+.contact-item{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem}
+.contact-icon{width:44px;height:44px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-icon svg{width:20px;height:20px;fill:#fff}
+.contact-item h4{font-size:0.95rem;margin-bottom:0.2rem}
+.contact-item p{font-size:0.9rem;color:#666}
+.contact-map{border-radius:8px;overflow:hidden;height:100%;min-height:300px}
+.contact-map iframe{width:100%;height:100%;border:0}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,0.6);text-align:center;padding:2rem}
+footer p{font-size:0.85rem}
+footer a{color:var(--green)}
+
+/* MOBILE */
+@media(max-width:768px){
+  .menu-toggle{display:flex}
+  .nav-links{position:fixed;top:0;right:-100%;width:70%;height:100vh;background:var(--dark);flex-direction:column;justify-content:center;padding:2rem;transition:right 0.3s}
+  .nav-links.active{right:0}
+  .hero-content{padding:2rem}
+  .hero h1{font-size:2rem}
+  .about-grid,.impec-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .about-badges{flex-direction:column}
+  .btn-outline{margin-left:0;margin-top:0.8rem}
+}
+@media(max-width:480px){
+  .gallery-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-logo">
+    <img src="https://aveymecanic.fr/aveyM_C3_A9caLogo2.png" alt="AVEYMECANIC">
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#about">L'entreprise</a>
+    <a href="#services">Savoir-faire</a>
+    <a href="#gallery">R&eacute;alisations</a>
+    <a href="#impec">Machine IMPEC</a>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Certifi&eacute; ISO 9001</div>
+    <h1>M&eacute;canique de <span>pr&eacute;cision</span> en Aveyron</h1>
+    <p>Usinage CNC 3 &agrave; 5 axes, fabrication de pi&egrave;ces unitaires et petites s&eacute;ries. 30 ans d'exp&eacute;rience au service de l'industrie.</p>
+    <a href="#contact" class="btn btn-blue">Demander un devis</a>
+    <a href="#gallery" class="btn btn-outline">Nos r&eacute;alisations</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="https://aveymecanic.fr/_DSC89610.jpg" alt="Pi&egrave;ce m&eacute;canique de pr&eacute;cision AVEYMECANIC">
+      </div>
+      <div class="about-text">
+        <h3>Pr&eacute;cision et r&eacute;activit&eacute; depuis 1995</h3>
+        <p>AVEYMECANIC est une PME de 8 salari&eacute;s situ&eacute;e &agrave; Anglars-Saint-F&eacute;lix en Aveyron, sp&eacute;cialis&eacute;e dans la r&eacute;alisation de pi&egrave;ces m&eacute;caniques de pr&eacute;cision.</p>
+        <p>Notre parc machines &agrave; commande num&eacute;rique pilot&eacute; par CFAO permet de r&eacute;aliser des formes complexes 3, 4 et 5 axes &agrave; partir de fichiers clients. Nous travaillons la plupart des mat&eacute;riaux : acier, inox, aluminium, titane, plastique technique.</p>
+        <p>Notre structure nous permet de r&eacute;pondre rapidement aux devis et aux commandes afin de satisfaire au mieux les exigences de nos clients.</p>
+        <div class="about-badges">
+          <div class="badge">
+            <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+            <span>ISO 9001</span>
+          </div>
+          <div class="badge">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Depuis 1995</span>
+          </div>
+          <div class="badge">
+            <svg viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+            <span>CNC 5 axes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-title">
+      <h2>Notre <span class="accent">savoir-faire</span></h2>
+      <p>Des solutions d'usinage adapt&eacute;es &agrave; chaque besoin industriel</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Usinage CNC</h3>
+        <p>Tournage et fraisage sur centres d'usinage &agrave; commande num&eacute;rique 3, 4 et 5 axes. Pi&egrave;ces unitaires ou petites s&eacute;ries.</p>
+      </div>
+      <div class="service-card">
+        <h3>CFAO / Programmation</h3>
+        <p>Programmation CFAO pour la r&eacute;alisation de formes complexes et 3D &agrave; partir de vos fichiers (STEP, IGES, DXF).</p>
+      </div>
+      <div class="service-card">
+        <h3>Mat&eacute;riaux vari&eacute;s</h3>
+        <p>Acier, inox, aluminium, titane, laiton, bronze, plastiques techniques. Chaque mat&eacute;riau est travaill&eacute; avec pr&eacute;cision.</p>
+      </div>
+      <div class="service-card">
+        <h3>Prototypage rapide</h3>
+        <p>R&eacute;alisation de prototypes et pi&egrave;ces d'essai avec des d&eacute;lais courts gr&acirc;ce &agrave; notre r&eacute;activit&eacute;.</p>
+      </div>
+      <div class="service-card">
+        <h3>Petites s&eacute;ries</h3>
+        <p>Fabrication en petite et moyenne s&eacute;rie avec un niveau de qualit&eacute; constant et un suivi rigoureux.</p>
+      </div>
+      <div class="service-card">
+        <h3>Contr&ocirc;le qualit&eacute;</h3>
+        <p>Contr&ocirc;le dimensionnel syst&eacute;matique. Certification ISO 9001 garantissant la tra&ccedil;abilit&eacute; de chaque pi&egrave;ce.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-title">
+      <h2>Nos <span class="accent">r&eacute;alisations</span></h2>
+      <p>Pi&egrave;ces m&eacute;caniques usin&eacute;es avec pr&eacute;cision pour l'industrie</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://aveymecanic.fr/_DSC89650.jpg" alt="Pi&egrave;ce aluminium usin&eacute;e">
+        <div class="gallery-caption">Pi&egrave;ce aluminium</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://aveymecanic.fr/_DSC89610.jpg" alt="Support m&eacute;canique">
+        <div class="gallery-caption">Support m&eacute;canique</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://aveymecanic.fr/FOND0.jpg" alt="Usinage de pr&eacute;cision">
+        <div class="gallery-caption">Usinage de pr&eacute;cision</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://aveymecanic.fr/_DSC89730.jpg" alt="Pi&egrave;ce technique">
+        <div class="gallery-caption">Pi&egrave;ce technique</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://aveymecanic.fr/_DSC89820.jpg" alt="Composant industriel">
+        <div class="gallery-caption">Composant industriel</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://aveymecanic.fr/_DSC89680.jpg" alt="Usinage CNC">
+        <div class="gallery-caption">Usinage CNC</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MACHINE IMPEC -->
+<section class="impec" id="impec">
+  <div class="container">
+    <div class="impec-grid">
+      <div class="impec-text">
+        <h3>Machine IMPEC</h3>
+        <p>AVEYMECANIC ne se limite pas &agrave; la sous-traitance. Nous concevons et fabriquons &eacute;galement notre propre machine : la <strong>Machine IMPEC</strong>.</p>
+        <p>Issue de notre expertise en usinage de pr&eacute;cision, cette machine est enti&egrave;rement fabriqu&eacute;e dans nos ateliers d'Anglars-Saint-F&eacute;lix. Elle t&eacute;moigne de notre capacit&eacute; &agrave; mener un projet de la conception &agrave; la r&eacute;alisation compl&egrave;te.</p>
+        <a href="#contact" class="btn btn-blue">En savoir plus</a>
+      </div>
+      <div class="impec-img">
+        <img src="https://aveymecanic.fr/DBR_7449.jpg" alt="Machine IMPEC AVEYMECANIC">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Un projet d'usinage ?</h2>
+  <p>Envoyez-nous vos plans, nous vous r&eacute;pondons sous 48h avec un devis d&eacute;taill&eacute;.</p>
+  <a href="#contact" class="btn btn-white">Demander un devis</a>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Contactez-<span class="accent">nous</span></h2>
+      <p>Pour un devis ou toute question technique</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>AVEYMECANIC</h3>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+          <div><h4>Adresse</h4><p>12390 Anglars-Saint-F&eacute;lix<br>Aveyron</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+          <div><h4>T&eacute;l&eacute;phone</h4><p><a href="tel:0565432910">05 65 43 29 10</a></p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+          <div><h4>Email</h4><p><a href="mailto:contact@aveymecanic.fr">contact@aveymecanic.fr</a></p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+          <div><h4>Horaires</h4><p>Lundi - Vendredi : 8h00 - 17h00</p></div>
+        </div>
+      </div>
+      <div class="contact-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5000!2d2.47!3d44.43!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sAnglars-Saint-F%C3%A9lix!5e0!3m2!1sfr!2sfr!4v1" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2026 AVEYMECANIC &mdash; M&eacute;canique de pr&eacute;cision &agrave; Anglars-Saint-F&eacute;lix (12) &mdash; Certifi&eacute; ISO 9001</p>
+</footer>
+
+<script>
+const toggle=document.getElementById('menuToggle');
+const nav=document.getElementById('navLinks');
+toggle.addEventListener('click',()=>nav.classList.toggle('active'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('active')));
+window.addEventListener('scroll',()=>{
+  document.querySelector('.nav').style.boxShadow=window.scrollY>50?'0 2px 20px rgba(0,0,0,0.3)':'none';
+});
+</script>
+</body>
+</html>
